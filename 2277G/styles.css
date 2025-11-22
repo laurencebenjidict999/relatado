@@ -1,0 +1,347 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+header .logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 15px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.search-container:hover {
+    background-color: #f1f1f1;
+}
+
+#search {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    font-size: 16px;
+}
+
+#search:focus {
+    outline: none;
+    border: 2px solid #555;
+}
+
+/* Slideshow Styles */
+#slideshow {
+    width: 100%;
+    height: 350px;
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-container {
+    display: flex;
+    width: 100%;
+    animation: slideAnimation 12s infinite;
+}
+
+.slide-image {
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease;
+}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Categories */
+#categories {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category {
+    padding: 12px 25px;
+    border: 1px solid #333;
+    background-color: #ff5722;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.category:hover {
+    background-color: #e64a19;
+}
+
+/* Menu */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Cart Badge */
+nav ul li a#cart-count {
+    background-color: #ff5722;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Dark Mode Button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+/* Social Media Links */
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+footer a:hover {
+    color: #ff5722;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .category {
+        padding: 10px 20px;
+    }
+
+    /* Mobile-specific styles */
+    header nav ul {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    header nav ul li a {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Show the hamburger icon */
+    .hamburger-icon {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+    }
+
+    /* Make the nav visible when active */
+    .nav-active ul {
+        display: flex;
+    }
+}
+
+/* Styles for the slideshow */
+#slideshow {
+    margin: 20px 0;
+}
+
+#slideshow .slide-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#slideshow .slide-container img {
+    width: 300px;
+    height: auto;
+    margin: 0 10px;
+}
+
+/* Categories Section */
+#categories {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#categories .category {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#categories .category:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+footer .social-media a:hover {
+    color: #ddd;
+}

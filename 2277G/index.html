@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagkaon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+
+    <button onclick="goBack()">⬅ Back</button>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Lameh kaau (by Relatado)</h1>
+            <img src="lami.jpg" width="50px" alt="Logo">
+        </div>
+        
+        <!-- Hamburger Icon for Mobile -->
+        <button id="hamburger" class="hamburger-icon">&#9776;</button>
+
+        <!-- Navbar -->
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="menu.html"><i class="fas fa-utensils"></i> Menu</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for food..." oninput="debounceSearch()">
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section id="slideshow">
+        <div class="slide-container">
+            <img src="burger.jpg" alt="Burger" class="slide-image">
+            <img src="pizza.jpg" alt="Pizza" class="slide-image">
+            <img src="salad.jpg" alt="Salad" class="slide-image">
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories">
+        <button class="category" onclick="filterCategory('Burgers')">Burgers</button>
+        <button class="category" onclick="filterCategory('Pizzas')">Pizzas</button>
+        <button class="category" onclick="filterCategory('Salads')">Salads</button>
+        <button class="category" onclick="filterCategory('Drinks')">Drinks</button>
+    </section>
+
+    <!-- Main Content (Menu) -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Lami Kaau (CC101 Final Exam).</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

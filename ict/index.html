@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <button id="theme-toggle">Dark Mode</button>
+    </header>
+
+    <button onclick="goBack()">Back</button>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="image/profile.jpg" alt="Profile Photo" class="profile-photo">
+        <p>Hello! I'm Laurence I'm just Grade12-Warren Student with the strand of TVL-ICT Under Computer System Servicing NCII and i have little knowledge on coding because my strand specialization is more on computer troubleshoot and about the networking service's rather than software coding however they have coding lessons but in very basic way like basic web development about html,css(code) and js unlike tvl-ict programming major was more on coding.</p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skill">
+            <span>HTML</span>
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%;">50%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <span>CSS</span>
+            <div class="progress-bar">
+                <div class="progress" style="width: 10%;">10%</div>
+            </div>
+        </div>
+        <div class="skill">
+            <span>JavaScript</span>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%;">none</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <img src="image/z.jpg" alt="Project 1">
+            <h3>Relatado 12-Warren CSS3</h3>
+            <p>This Is My First Webpage On This Subject Its Very Simple Using Basic Html.</p>
+            <button class="view-project">View Project</button>
+        </div>
+        <div class="project-card">
+            <img src="image/2.jpg" alt="Project 2">
+            <h3>Log in Page</h3>
+            <p>My Log in page(Gi kuha sa downloads).</p>
+            <button class="view-project">View Project</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: laurencerelatado@gmail.com</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
