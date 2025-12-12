@@ -81,6 +81,7 @@ nav a.active {
 
 /* ========= RESPONSIVE NAV ========= */
 @media (max-width: 995px) {
+
   #menu-icon {
     display: block;
   }
@@ -97,6 +98,19 @@ nav a.active {
     border-bottom: 3px solid #b74b4b;
     border-bottom-left-radius: 2rem;
     padding: 2rem;
+
+    /* 🔥 Scrollable sidebar */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Scrollbar styling */
+  nav::-webkit-scrollbar {
+    width: 6px;
+  }
+  nav::-webkit-scrollbar-thumb {
+    background: #b74b4b;
+    border-radius: 5px;
   }
 
   nav.active {
@@ -150,9 +164,8 @@ span {
   line-height: 1.3;
 }
 
-.home-content h3 {
+.home-content h4 {
   font-size: 3rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -174,6 +187,10 @@ span {
 }
 
 /* ========= SOCIAL ICONS ========= */
+social-icons {
+  margin-top: 20px;
+}
+
 .social-icons a {
   display: inline-flex;
   justify-content: center;
@@ -324,7 +341,7 @@ span {
 .progress-line.html span { width: 90%; }
 .progress-line.css span { width: 85%; }
 .progress-line.js span { width: 75%; }
-.progress-line.react span { width: 70%; }
+.progress-line.computer span { width: 90%; }
 
 /* ========= PROJECTS ========= */
 .projects {
