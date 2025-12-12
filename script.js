@@ -118,7 +118,7 @@ function applyTimeBasedBackground() {
 
   if (hour >= 5 && hour < 11) {
     // Morning
-    bgColor = "#FFFFFF"; // Slightly lighter
+    bgColor = "#D3D3D3"; // Slightly lighter
   } else if (hour >= 11 && hour < 17) {
     // Afternoon
     bgColor = "#0d0d0d"; // Neutral dark
