@@ -1,4 +1,6 @@
-// Toggle Navbar
+/* =============================
+        NAVBAR TOGGLE
+   ============================= */
 const menu = document.querySelector("#menu-icon");
 const navbar = document.querySelector("nav");
 const navLinks = document.querySelectorAll("nav a");
@@ -9,7 +11,17 @@ menu.addEventListener("click", () => {
   navbar.classList.toggle("active");
 });
 
-// Smooth scroll
+// Close menu after clicking a nav link
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navbar.classList.remove("active");
+    menu.classList.remove("fa-x");
+  });
+});
+
+/* =============================
+        SMOOTH SCROLL
+   ============================= */
 function smoothScroll(target, duration) {
   const targetElement = document.querySelector(target);
   if (!targetElement) return;
@@ -37,21 +49,23 @@ function smoothScroll(target, duration) {
   requestAnimationFrame(animation);
 }
 
+// Apply smooth scroll on nav click
 navLinks.forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
     const target = link.getAttribute("href");
     smoothScroll(target, 800);
-    navbar.classList.remove("active");
-    menu.classList.remove("fa-x");
   });
 });
 
-// Highlight nav while scrolling
+/* =============================
+        ACTIVE NAV ON SCROLL
+   ============================= */
 window.addEventListener("scroll", () => {
-  let fromTop = window.scrollY + 100;
+  let fromTop = window.scrollY + 110;
+
   navLinks.forEach(link => {
-    let section = document.querySelector(link.getAttribute("href"));
+    const section = document.querySelector(link.getAttribute("href"));
     if (
       section.offsetTop <= fromTop &&
       section.offsetTop + section.offsetHeight > fromTop
@@ -62,7 +76,9 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* Typewriter Effect */
+/* =============================
+        TYPEWRITER EFFECT
+   ============================= */
 document.addEventListener("DOMContentLoaded", () => {
   const words = [
     "3rd Year BSIT",
@@ -77,15 +93,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  const typeSpeed = 90;
+  const typeSpeed = 85;
   const deleteSpeed = 45;
   const pauseBetween = 1400;
 
   function loop() {
     const current = words[wordIndex];
+
     if (!isDeleting) {
       typeEl.textContent = current.substring(0, charIndex + 1);
       charIndex++;
+
       if (charIndex === current.length) {
         isDeleting = true;
         setTimeout(loop, pauseBetween);
@@ -95,10 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       typeEl.textContent = current.substring(0, charIndex - 1);
       charIndex--;
+
       if (charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(loop, 300);
+        setTimeout(loop, 350);
       } else {
         setTimeout(loop, deleteSpeed);
       }
@@ -113,29 +132,30 @@ document.addEventListener("DOMContentLoaded", () => {
    ============================= */
 function applyTimeBasedBackground() {
   const hour = new Date().getHours();
-
   let bgColor;
 
   if (hour >= 5 && hour < 11) {
-    // Morning
-    bgColor = "#D3D3D3"; // Slightly lighter
+    bgColor = "#D3D3D3"; // Morning
   } else if (hour >= 11 && hour < 17) {
-    // Afternoon
-    bgColor = "#0d0d0d"; // Neutral dark
+    bgColor = "#0d0d0d"; // Afternoon
   } else if (hour >= 17 && hour < 20) {
-    // Sunset
-    bgColor = "#150000"; // Dark red tone
+    bgColor = "#150000"; // Sunset
   } else {
-    // Night (default)
-    bgColor = "#000000"; 
+    bgColor = "#000000"; // Night
   }
 
-  // Apply to body and all main dark sections
   document.body.style.backgroundColor = bgColor;
-  document.querySelectorAll(".home, .services, .skills, .projects, .education, .experience, .contact")
-    .forEach(sec => sec.style.backgroundColor = bgColor);
+
+  document
+    .querySelectorAll(
+      ".home, .services, .skills, .projects, .education, .experience, .contact"
+    )
+    .forEach(section => {
+      section.style.backgroundColor = bgColor;
+    });
 }
 
-// Run immediately and update every 15 minutes
+// Run immediately + update every 15 minutes
 applyTimeBasedBackground();
 setInterval(applyTimeBasedBackground, 900000);
+
